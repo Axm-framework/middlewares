@@ -1,2 +1,2 @@
-# middlewares
-Middlewares Axm
+# Views
+Views Axm
