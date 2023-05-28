@@ -8,7 +8,7 @@ use Axm\Exception\AxmException;
 use Axm\Middlewares\BaseMiddleware;
 
 /**
- * Middleware que verifica si un usuario está autenticado y si tiene permisos para acceder a la acción actual.
+ * Verifica si el sitio esta en mantenimiento.
  */
 class MaintenanceMiddleware extends BaseMiddleware
 {
@@ -21,6 +21,7 @@ class MaintenanceMiddleware extends BaseMiddleware
     public function execute()
     {
         $this->config = Axm::app()->config();
+
         if ($this->config->maintenance === true) {
             $this->clearCache();
             return $this->showViewMaintenance();
